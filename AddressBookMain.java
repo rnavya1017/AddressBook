@@ -24,37 +24,47 @@ public class AddressBookMain {
 
                 case 1:
 
-                    System.out.println("First Name:");
-                    String first = sc.nextLine();
+                     char c;
 
-                    System.out.println("Last Name:");
-                    String last = sc.nextLine();
+        do {
 
-                    System.out.println("Address:");
-                    String address = sc.nextLine();
+            System.out.println("Enter First Name:");
+            String firstName = sc.nextLine();
 
-                    System.out.println("City:");
-                    String city = sc.nextLine();
+            System.out.println("Enter Last Name:");
+            String lastName = sc.nextLine();
 
-                    System.out.println("State:");
-                    String state = sc.nextLine();
+            System.out.println("Enter Address:");
+            String address = sc.nextLine();
 
-                    System.out.println("Zip:");
-                    String zip = sc.nextLine();
+            System.out.println("Enter City:");
+            String city = sc.nextLine();
 
-                    System.out.println("Phone:");
-                    String phone = sc.nextLine();
+            System.out.println("Enter State:");
+            String state = sc.nextLine();
 
-                    System.out.println("Email:");
-                    String email = sc.nextLine();
+            System.out.println("Enter Zip:");
+            String zip = sc.nextLine();
 
-                    Contact c = new Contact(
-                            first, last,
-                            address, city,
-                            state, zip,
-                            phone, email);
+            System.out.println("Enter Phone:");
+            String phone = sc.nextLine();
 
-                    addressBook.addContact(c);
+            System.out.println("Enter Email:");
+            String email = sc.nextLine();
+
+            Contact contact =
+                    new Contact(firstName,lastName,
+                            address,city,state,
+                            zip,phone,email);
+
+            addressBook.addContact(contact);
+
+            System.out.println("Add Another Contact? (y/n)");
+            c = sc.next().charAt(0);
+            sc.nextLine();
+
+        } while(c == 'y' || c== 'Y');
+
 
                     break;
 
