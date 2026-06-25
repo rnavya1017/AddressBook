@@ -48,4 +48,16 @@ public class AddressBook {
         }
         System.out.println("Contact with first name " + editFirstName + " not found.");
     }
+    public void deleteContact(String deleteFirstName,Scanner sc) {
+        sc=new Scanner(System.in);
+         for (Contact contact : contactList) {
+
+            if (contact.getFirstName().equalsIgnoreCase(deleteFirstName)) {
+                contactList.remove(contact);
+                System.out.println("Contact Deleted Successfully.");
+                return;
+            }
+        }
+        System.out.println("Contact with first name " + deleteFirstName + " not found.");
+    }
 }
